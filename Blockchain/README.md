@@ -8,7 +8,7 @@
 # Etherum mechanism
 - `GHOST protocol` “GHOST” = “Greedy Heaviest Observed Subtree”
 
-# Ethereum system is comprised [how-does-ethereum-work-anyway](https://medium.com/@preethikasireddy/how-does-ethereum-work-anyway-22d1df506369)
+# Ethereum system is comprised [how-does-ethereum-work](https://medium.com/@preethikasireddy/how-does-ethereum-work-anyway-22d1df506369)
 - Accounts  
 - state
 - gas and fees
