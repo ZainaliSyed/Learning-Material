@@ -9,16 +9,7 @@
 - `GHOST protocol` “GHOST” = “Greedy Heaviest Observed Subtree”
 
 # Ethereum system is comprised [how-does-ethereum-work-anyway](https://medium.com/@preethikasireddy/how-does-ethereum-work-anyway-22d1df506369)
-- accounts
-  Account Two Types
-  - Internal 
-  - External 
-
-`Account state`
-- balance: The number of Wei owned by this address. There are 1e+18 Wei per Ether.
-- storageRoot
-- 
-  
+- Accounts  
 - state
 - gas and fees
 - transactions
