@@ -14,3 +14,6 @@ return { name: name }
 (name) => {
 return { name: name }
 }
+
+const multiply = (x) => (y) => x \* y
+multiply(5)(20)
