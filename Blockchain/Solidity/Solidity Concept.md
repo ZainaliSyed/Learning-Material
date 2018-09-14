@@ -26,5 +26,8 @@
     function () payable isOwner {
       
    }
+   function setName (string _name) public isOwner{
+   name = _name
+   } 
    ```
     
