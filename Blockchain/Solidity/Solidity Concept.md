@@ -17,12 +17,14 @@
  - requiure is just like if condiction
  - **_;** is used when require is true run body where modifier is call 
  
- ``` modifier isOwner{
+ ``` 
+ modifier isOwner{
         require(owner== msg.sender);
         _;
     }
     
     function () payable isOwner {
       
-   }```
+   }
+   ```
     
