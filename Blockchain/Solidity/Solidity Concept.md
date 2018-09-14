@@ -13,3 +13,16 @@
   }
   ```
  - access modifer are pubic,private and internal (simiar to protected)
+ - Modifier is something like function 
+ - requiure is just like if condiction
+ - **_;** is used when require is true run body where modifier is call 
+ 
+ ``` modifier isOwner{
+        require(owner== msg.sender);
+        _;
+    }
+    
+    function () payable isOwner {
+      
+   }```
+    
