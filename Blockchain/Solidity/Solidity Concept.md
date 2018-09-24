@@ -34,3 +34,5 @@
    
     - A constructor is optional. Only one constructor is allowed, and this means overloading is not supported.
    
+   # Functions
+   - Functions are of two types internal and external 
