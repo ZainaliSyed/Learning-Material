@@ -36,4 +36,4 @@
    
    # Functions
    - Functions are of two types internal and external 
-   - Functions can be specified as being `external, public, internal or private`, where the default is public. For state           variables, external is not possible and the default is internal.
+   - Functions can be specified as being **(know as visibility specifier)** `external, public, internal or private`, where the default is public. For state variables, external is not possible and the default is internal.
