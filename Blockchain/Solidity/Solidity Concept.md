@@ -30,4 +30,7 @@
    name = _name
    } 
    ```
-    
+   # constructor
+   
+    - A constructor is optional. Only one constructor is allowed, and this means overloading is not supported.
+   
