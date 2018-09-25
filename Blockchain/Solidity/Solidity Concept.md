@@ -40,3 +40,6 @@
    # Fallback Function
    -  the fallback function can only rely on 2300 gas being available 
    -  Contracts that receive Ether directly (without a function call, i.e. using send or transfer) but do not define a fallback function throw an exception, sending back the Ether 
+   
+   # Inheritance 
+   - 
