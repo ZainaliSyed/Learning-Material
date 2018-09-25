@@ -40,6 +40,11 @@ modifier isOwner{
 
 - Functions are of two types internal and external
 - Functions can be specified as being **(know as visibility specifier)** `external, public, internal or private`, where the default is public. For state variables, external is not possible and the default is internal.
+- function syntax can be written as
+
+```
+function (<parameter types>) {internal|external} [pure|constant|view|payable] [returns (<return types>)]
+```
 
 # Fallback Function
 
@@ -49,3 +54,8 @@ modifier isOwner{
 # Inheritance
 
 -
+
+# Transfer / Send
+
+- use transfer or even better: use a pattern where the recipient withdraws the money
+- send can cause exception and our Gas can also be vanish
