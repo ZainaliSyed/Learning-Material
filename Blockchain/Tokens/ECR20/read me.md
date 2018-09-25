@@ -1,4 +1,4 @@
-# Fungible Token
+# ECR 20
 
-- To create your own token , Token have some standards and pre builtin contracts
-- something that can interchange just like US Dollar
+- admin = web3.eth.accounts[0]
+- token.balanceOf(admin).then(function(bal){balance = bal;})
