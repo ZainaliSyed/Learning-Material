@@ -36,21 +36,6 @@ modifier isOwner{
 
     - A constructor is optional. Only one constructor is allowed, and this means overloading is not supported.
 
-# Functions
-
-- Functions are of two types internal and external
-- Functions can be specified as being **(know as visibility specifier)** `external, public, internal or private`, where the default is public. For state variables, external is not possible and the default is internal.
-- function syntax can be written as
-
-```
-function (<parameter types>) {internal|external} [pure|constant|view|payable] [returns (<return types>)]
-```
-
-# Fallback Function
-
-- the fallback function can only rely on 2300 gas being available
-- Contracts that receive Ether directly (without a function call, i.e. using send or transfer) but do not define a fallback function throw an exception, sending back the Ether
-
 # Inheritance
 
 -
