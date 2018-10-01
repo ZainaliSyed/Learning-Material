@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // async function f() {
+    //   return 1;
+    // }
+    // console.log(" async : ", f().then((resolve) => {
+    //   console.log("resolve : ", resolve);
+    // }));
+
+    // async function f() {
+    //   return Promise.resolve(1);
+    // }
+
+    // f().then(alert); // 1
+
+    // await
+    // async function f(param) {
+    //   return await (1);
+    // }
+    // f().then(alert);
+
+    async function f(param) {
+      // return setTimeout();
+      let promise = new Promise((resolve, reject) => {
+        console.log("resolve : ", resolve);
+        return setTimeout(() => resolve("Done!"), 1000);
+      });
+      let result = await promise;
+      alert(result);
+    }
+    f();
+
+    // function loadJson(url) {
+    //   return fetch(url)
+    //     .then(response => {
+    //       if (response.status == 200) {
+    //         return response.json();
+    //       } else {
+    //         throw new Error(response.status);
+    //       }
+    //     })
+    // }
+
+    // loadJson('no-such-user.json') // (3)
+    //   .catch(alert); // Error: 404
+
+    async function loadJson(url) {
+      let response = await fetch("https://randomuser.me/api/?results=10");
+      if (response.status === 200) {
+        return response.json();
+      }
+      throw new Error(response.status);
+    }
+    loadJson("").catch(alert);
+
+
+    function demoGithubUser() {
+      let name = prompt("Enter a name?", "iliakan");
+
+      return loadJson(`https://api.github.com/users/${name}`)
+        .then(user => {
+          alert(`Full name: ${user.name}.`);
+          return user;
+        })
+        .catch(err => {
+          if (err instanceof HttpError && err.response.status == 404) {
+            alert("No such user, please reenter.");
+            return demoGithubUser();
+          } else {
+            throw err;
+          }
+        });
+    }
+    demoGithubUser();
+
+    async function data() {
+      try {
+        let response = await loadJson("https://api.github.com/users");
+        if (response.status === 200) {
+          return alert("Full Name ");
+        }
+      } catch (error) {
+        if (error instanceof HttpError && error.response.status == 404) {
+          alert("No such user, please reenter.");
+          return demoGithubUser();
+        } else {
+          throw error;
+        }
+      }
+
+
+    }
+
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

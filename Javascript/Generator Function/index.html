@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // function* idMaker() {
+    //   let index = 0;
+    //   while (index < index + 1) {
+    //     console.log("index* : ", index);
+    //     yield index++;
+    //     console.log("index** : ", index);
+    //     if (index === 2) {
+    //       break;
+    //     }
+    //   }
+    // }
+    // const gen = idMaker();
+    // console.log(gen.next().value);
+    // console.log(gen.next().value);
+    // console.log(gen.next().value);
+
+
+    function* anotherGenerator(i) {
+      yield i + 1;
+      yield i + 2;
+      yield i + 3;
+    }
+
+    function* generator(i) {
+      yield i;
+      yield* anotherGenerator(i);
+      yield i + 10;
+    }
+    const gen = generator(10);
+    console.log("generator : ", gen.next().value);
+    console.log("generator : ", gen.next().value);
+    console.log("generator : ", gen.next().value);
+    console.log("generator : ", gen.next().value);
+    console.log("generator : ", gen.next().value);
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
