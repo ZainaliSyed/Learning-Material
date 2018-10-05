@@ -27,3 +27,9 @@
 # Stellar Consensus Protocol (Stellar backbone) [Stellar Consensus](https://www.stellar.org/developers/guides/concepts/scp.html)
 
 - SCP simultaneously enjoys four key properties: decentralized control, low latency, flexible trust, and asymptotic security.
+
+# Reference
+
+- [awesome-stellar details](https://github.com/katopz/awesome-stellar)
+- [github code](https://www.stellar.org/stellar-build-challenge-6-honorable-mentions/)
+- [cross-border-payments](https://www.ibm.com/blogs/blockchain/2017/10/on-the-horizon-new-blockchain-solution-for-cross-border-payments/)
