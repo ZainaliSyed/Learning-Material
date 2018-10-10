@@ -6,3 +6,4 @@
 # Reference
 
 - (react-life cycle )[https://medium.freecodecamp.org/why-react16-is-a-blessing-to-react-developers-31433bfc210a]
+- [compare two trees](https://medium.freecodecamp.org/these-react-fundamentals-you-skip-may-be-killing-you-7629fb87dd4a)
