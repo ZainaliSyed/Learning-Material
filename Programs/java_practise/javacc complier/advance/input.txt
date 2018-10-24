@@ -1,0 +1,6 @@
+class abc {
+ String myfunc(int xvz){
+ }
+int  a=10;
+
+}

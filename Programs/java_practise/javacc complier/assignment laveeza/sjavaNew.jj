@@ -1,0 +1,54 @@
+options
+{
+IGNORE_CASE = true;
+}
+  
+PARSER_BEGIN(sjavaNew)
+public class sjavaNew{}
+PARSER_END(sjavaNew)
+
+SKIP:
+{
+	<" ">
+| <"\n">
+| <"\t">
+|<"\r">
+}
+
+TOKEN:   /* symbols */
+{
+<PLUS : "+" >
+| <SEMICOLON: ";">
+|<SUBTRACT: "-">
+|<DIVIDE: "/">
+|<Remainder: "%">
+ 
+}
+
+TOKEN: /* reserve words */
+{
+ <IF : "if">
+|<ELSE: "else">
+|<STATIC: "static">
+|<PUBLIC: "public">
+|<ABSTRACT: "abstract">
+|<BOOLEAN: "boolean">
+|<BREAK: "break">
+|<BYTE: "byte">
+|<CASE: "case">
+|<CATCH: "catch">	
+|<CHAR: "char">	
+|<CLASS: "class">
+|<WHILE: "while">
+|<FOR: "for">
+|<DO: "DO">
+
+}
+ 
+//STATIC TOKENS
+TOKEN : {
+  <LOGIC_CONSTANT: "true" | "false" | "-1">
+|  <DIGIT: (["0"-"9"])+>
+| <ALPHABATES:["A"-"Z","a"-"Z"]
+}
+

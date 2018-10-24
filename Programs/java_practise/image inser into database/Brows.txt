@@ -1,0 +1,35 @@
+//select pictur 
+       try{
+            FileDialog d=new FileDialog(new JFrame(),"Open",FileDialog.LOAD);
+            d.show();
+            String file=d.getFile();
+            String dir=d.getDirectory();
+            String path=dir+file;
+            this.path=path;  //this is for insert imge in data base form another method
+
+/*            
+        String inputImagePath = path;
+        String outputImagePath1 =path;
+        try {
+            // resize to a fixed width (not proportional)
+            int scaledWidth = 180;
+            int scaledHeight = 180;
+            ImageResizer.resize(inputImagePath, outputImagePath1, scaledWidth, scaledHeight);
+ 
+            // resize smaller by 50%
+        } catch (IOException ex) {
+            System.out.println("Error resizing the image.");
+            ex.printStackTrace();
+        }           
+*/        
+            FileInputStream ifile=new FileInputStream(path);
+            ImageIcon ic=new ImageIcon(path);
+            label.setIcon(ic);
+            //            ff=new DataInputStream(new FileInputStream(path));
+//            fsize=ff.available();
+ //           size.setText(fsize+"");
+            
+        }catch(Exception e){
+           // e.printStackTrace();
+            JOptionPane.showMessageDialog(null,"Sory this Image is not suported... try again");
+        }

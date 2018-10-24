@@ -6,7 +6,7 @@
 - Query
 
 - Joins
-- All KEYS
+- All KEYS [](https://www.dotnettricks.com/learn/sqlserver/different-types-of-sql-keys)
 - Difference between primary and unique
 - Sub Query
   Important
@@ -14,3 +14,5 @@
 - distint and groupby
 - insert
 - normalization
+
+trucate , delete , drop

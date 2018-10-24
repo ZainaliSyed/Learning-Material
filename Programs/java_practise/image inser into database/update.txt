@@ -1,0 +1,42 @@
+        EmployeeBean bean=(EmployeeBean)this.employeeList.getSelectedValue();
+        if(bean==null){
+            JOptionPane.showMessageDialog(null,"Select Employ First");
+            return;
+        }
+        
+        int employid=bean.getEmployeeId();
+        try{
+            FileInputStream f=new FileInputStream(path);
+            int size=f.available();
+            byte img[]=new byte[size];
+            f.read(img,0, size);
+            ImageIcon ic=new ImageIcon(img);
+            
+            int row=DBManager.updateEmployRecord(employid,img);
+            if(row>=1){
+                JOptionPane.showMessageDialog(null,"Image is secusfully updated....");
+                path=null;
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null,"sory\nImage is not selected properly.....");
+        }
+
+
+///////////////////////////////////dbmanager...........................
+    public static int updateEmployRecord(int employid, byte[] img)throws Exception{
+        String query="Update EmployeeTable set image=? where employee_id=?";
+        System.out.println(query);     
+        PreparedStatement ps = null;
+        try{
+            ps = con.prepareStatement(query);    
+            ps.setBytes(1,img);     
+            ps.setInt(2,employid);
+            int rows= ps.executeUpdate();
+            con.commit();
+            return rows;
+        }
+         finally{
+            ps.close();
+         }    
+    }

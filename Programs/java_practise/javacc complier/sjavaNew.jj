@@ -1,0 +1,28 @@
+options
+{
+IGNORE_CASE = true;
+}
+  
+PARSER_BEGIN(sjavaNew)
+	public class sjavaNew{}
+PARSER_END(sjavaNew)
+
+SKIP:
+{
+	" "
+| <"\n">
+| <"\t">
+}
+
+TOKEN:   /* symbols */
+{
+<PLUS : "+" >
+| <SEMICOLON: ";">
+|<SUBTRACT: "-">
+}
+
+TOKEN: /* reserve words */
+{
+<IF : "if">
+|<ELSE: "else">
+}

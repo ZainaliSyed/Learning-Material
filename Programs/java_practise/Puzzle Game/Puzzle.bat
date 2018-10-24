@@ -1,0 +1,3 @@
+javac PuzzleImage.java 
+java  PuzzleImage
+pause ...

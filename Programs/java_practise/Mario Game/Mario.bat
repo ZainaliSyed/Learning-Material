@@ -1,0 +1,3 @@
+javac Mario.java
+java Mario
+pause...

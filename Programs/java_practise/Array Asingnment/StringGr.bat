@@ -1,0 +1,3 @@
+javac StringGr.java
+java StringGr
+pause...

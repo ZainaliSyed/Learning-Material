@@ -1,0 +1,3 @@
+javac ButtonMove.java
+java ButtonMove
+pause...

@@ -1,0 +1,6 @@
+Enter the  Load : 2
+Enter the Amount :5000 
+Total :10000
+Maintance : 300
+Driver 10% :1000Disel : 5000
+Net Profit : 3700

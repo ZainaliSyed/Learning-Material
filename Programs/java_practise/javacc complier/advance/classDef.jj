@@ -1,0 +1,169 @@
+options
+{
+IGNORE_CASE = true;
+}
+PARSER_BEGIN(Defination)
+	public class Defination
+			{
+
+			}
+PARSER_END(Defination)
+
+SKIP:
+{
+	 <" ">
+	|<"\n">
+	|<"\t">
+	|<"\r">
+}
+ TOKEN: /* IDENTIFIERS*/
+{
+	 < IDENTIFIERS :["A"-"Z","a"-"z"](["A"-"Z","a"-"z","0"-"9"])*>
+	 |< NUMBER :(["0"-"9"])+ >
+
+}
+TOKEN:   /* symbols */
+{
+ 	 <PLUS : "+" >
+	|<SEMICOLON: ";">
+	|<SUBTRACT: "-">
+	|<MULTIPLY:"*" >
+	|<DIVIDE: "/">
+	|<EQUAL: "==">
+	|<GRTHEN : ">">
+	|<NOT : "!">
+	|<LEFTBRACE : "{">
+	|<LEFTBRACKET : "[">
+	|<RIGHTBRACKET : "]">
+	|<RIGHTBRACE : "}">
+	|<PERIOD  : ".">
+	|<COMMA : ",">
+	|<GTE : ">=">
+	|<AND : "&&">
+	|<OR  : "||">
+	|<LPAREN : "(">
+	|<RPAREN : ")">
+	|<NOTEQUAL : "!=">
+	|<LTE  : "<=">
+	|<LTHEN : "<">
+	|<GETS : "=">
+
+}
+
+TOKEN: /* reserve words */
+{
+	 < IFF: "iffi">
+	|< ELSE: "else">
+	|< ABSTRACT : "abstract">
+	|< SWITCH: "switch">
+	|< SUPER : "super ">
+	|< NATIVE : "native ">
+	|< NEW: "new ">
+	|< CONST : "const ">
+	|< WHILE: "while">
+	|< FOR : "for ">
+	|< FLOAT: "float ">
+	|< CLASS: "class ">
+	|< VOLITILE: "volatile">
+	|< STRICTFP: "strictfp ">
+	|< LONG: "long ">
+	|< FINALLY: "finally ">
+	|< CHAR: "char ">
+	|< VOID: "void">
+	|< STATIC: "static ">
+	|< FINAL: "final ">
+	|< CATCH: "catch ">
+	|< TRY: "try">
+	|< SHORT: "short ">
+	|< INT: "int ">
+	|< EXTENDS: " extends ">
+	|< CASE: "case">
+	|< TRANSIENT: "transient">
+	|< RETURN: "return ">
+	|< INSTANCEOF: "instanceof ">
+	|< BYTE: "byte ">
+	
+	|< DOUBLE: "double ">
+	|< PUBLIC: "public ">
+	|< IMPORT: "import">
+	|< BREAK: "break ">
+	|< PROTECTED: "protected ">
+	|< IMPLEMENTS: "implements ">
+	|< DO: "do">
+	|< BOOLEAN: "boolean">
+	|< THIS: "this">
+	|< PRIVATE: "private ">
+	|< DEFAULTE: "default">
+	|< ASSERT: "assert">
+	|< GOTO: "goto">
+	|< SYNCHRONIZED: "synchronized">
+	|< PACKAGE: "package">
+	|< CONTINUE: "continue ">
+ 
+}
+
+
+
+
+void classd():
+{}
+{
+	<CLASS> <IDENTIFIERS> <LEFTBRACE> 
+	 function()
+		expression()
+	 <RIGHTBRACE>
+
+
+}
+
+void function():
+{}
+{
+	<IDENTIFIERS> <IDENTIFIERS> <LPAREN> <INT> <IDENTIFIERS> <RPAREN> <LEFTBRACE> <RIGHTBRACE>
+
+}
+void expression():
+{}
+{
+	variable()  <GETS> (<NUMBER>|<IDENTIFIERS>)  <SEMICOLON>
+
+}
+void variable():
+{}
+{
+
+	(<INT>| <BOOLEAN >| <FLOAT>| <LONG> | <DOUBLE>|<BYTE>) (<IDENTIFIERS>)
+ 
+}
+void Opexpression():
+{}
+{
+  (<NUMBER>|<IDENTIFIERS>)  (<PLUS>|<SUBTRACT>|<MULTIPLY>|<DIVIDE> | <EQUAL>| <LTHEN>| <GRTHEN>| <NOT>| <OR>| <AND>| <NOTEQUAL>| <LTE> | <GTE>) (<NUMBER>|<IDENTIFIERS>) <SEMICOLON>
+
+}
+void AssigenStatements():
+{}
+{
+		variable() <GETS> expression() <SEMICOLON>
+
+}
+void IncrementStatements():
+{}
+{
+		variable() <GETS> variable()(<SUBTRACT> |<PLUS>) <NUMBER>
+
+}
+void VDStatements():
+{} 
+{
+	variable() <SEMICOLON>
+	variable() <GETS> (<NUMBER >|<IDENTIFIERS>) <SEMICOLON>
+
+}
+
+void IfStatement():
+{}
+{
+	<FOR> <LPAREN> Opexpression() <RPAREN> 
+
+}
