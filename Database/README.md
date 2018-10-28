@@ -16,3 +16,6 @@
 - normalization
 
 trucate , delete , drop
+
+- View , Store procedure , cluster index
+- Entity ,Fragmentation
