@@ -1,0 +1,3 @@
+javac BtnLabelAction.java 
+java BtnLabelAction
+pause... 

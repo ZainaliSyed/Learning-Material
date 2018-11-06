@@ -1,0 +1,2 @@
+- Point
+- it can accept only one null value and it can not have duplicate values.

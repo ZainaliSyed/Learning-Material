@@ -1,0 +1,62 @@
+options
+{
+IGNORE_CASE = true;
+}
+  
+PARSER_BEGIN(sjavaNew)
+	public class sjavaNew{}
+PARSER_END(sjavaNew)
+
+TOKEN_MGR_DECLS: { static int commentNesting=0; }
+
+SKIP:
+{
+	<" ">
+| <"\n">
+| <"\t">
+|<"\r">
+| "/*"{commentNesting++;}:IN_COMMENT 
+}
+
+<IN_COMMENT>SKIP: 
+{
+ "/*"{commentNesting++;} 
+ |"*/"{commentNesting--; 
+ if(commentNesting==0) 
+ SwitchTo(DEFAULT); } |<~[]> 
+}
+
+
+
+TOKEN:   /* symbols */
+{
+<PLUS : "+" >
+| <SEMICOLON: ";">
+|<SUBTRACT: "-">
+|<DIVIDE: "/">
+|<Remainder: "%">
+ 
+}
+
+TOKEN: /* reserve words */
+{
+<IF : "if">
+|<ELSE: "else">
+|<STATIC: "static">
+|<PUBLIC: "public">
+|<ABSTRACT: "abstract">
+|<BOOLEAN: "boolean">
+|<BREAK: "break">
+|<BYTE: "byte">
+|<CASE: "case">
+|<CATCH: "catch">	
+|<CHAR: "char">	
+|<CLASS: "class">	
+/*|<DEFAULT: "default">	 */
+|<CONTINUE: "continue">	
+
+|<HELLO: "hello">
+
+
+}
+ 

@@ -1,0 +1,3 @@
+javac starLeft.java
+java starLeft
+pause...

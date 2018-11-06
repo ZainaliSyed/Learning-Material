@@ -1,0 +1,3 @@
+javac GroupEClint.java
+java GroupEClint
+pause....

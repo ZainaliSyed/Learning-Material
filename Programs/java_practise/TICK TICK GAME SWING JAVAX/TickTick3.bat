@@ -1,0 +1,3 @@
+javac TickTick3.java
+java TickTick3
+pause....

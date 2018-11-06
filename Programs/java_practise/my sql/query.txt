@@ -1,0 +1,7 @@
+
+CREATE TABLE
+faculty(fac_id int not null PRIMARY key AUTO_INCREMENT,fac_name text,remakrs varchar(40))
+
+
+create tabel
+department(fac_id int ,dep_id int not null primary key auto_increment,dep_name text,remarks text,foreighen key (fac_id)references faculty(fac_id))

@@ -1,0 +1,92 @@
+       
+	 CategoryBean bean=(CategoryBean)this.categoryComboBox.getSelectedItem();
+        if(bean==null)return;
+        CategoryBean catbean=(CategoryBean)this.categoryComboBox.getSelectedItem();
+        if(bean==null);
+
+        int catId=bean.getCategoryId();
+        String name=this.nameTextField.getText();
+        String fName=this.fNameTextField.getText();
+        String surname=this.surnameTextField.getText();
+       // String dob=this.dobDate12.getDateFormatString();
+        String cnic=cnicTextField.getText();
+        String contct=contactTextField.getText();
+        String email=emailTextField.getText();
+        String address=addressTextField.getText();
+       // String joinDate=joingDateChoser.getDateFormatString();
+        String dept=deptTextField.getText();
+        String grde=gradeTextField.getText();
+        String officeNo=officePhoneTextField.getText();
+        String status=status_com.getSelectedItem()+"";
+        String homeNo=homePhoneTextField.getText();
+        String amnt=allowAmountTextField.getText();
+        int amount=0;
+        try{
+            amount=Integer.parseInt(amnt);
+        }catch(Exception eee){
+            allowAmountTextField.setBackground(Color.red);
+            //JOptionPane.showMessageDialog(null,"");
+        }
+        
+        String remarks=remarkTextArea.getText(); 
+        byte img[];      
+        String genderr="";
+                boolean fem=fmale.isSelected();
+                boolean mal=male.isSelected();
+                if(fem==true)genderr="F";
+                else
+                    genderr="M";
+        try{
+            FileInputStream f=new FileInputStream(path);
+            int size=f.available();
+            img=new byte[size];
+            f.read(img,0, size);
+            ImageIcon ic=new ImageIcon(img);
+           JOptionPane.showMessageDialog(null,ic);
+        }catch(Exception e){
+            label.setBackground(Color.red);
+            JOptionPane.showMessageDialog(null,"sory\nImage is not selected properly.....");
+            return;
+        }                
+        try{
+            SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd");
+            String joinDate=format.format(joingDateChoser.getDate());
+            String dob=format.format(dobDate12.getDate());
+        int row=DBManager.addEmployee(catId, name, genderr, fName, surname, dob, cnic, contct, email, address, joinDate, dept, grde, officeNo, homeNo, status,catbean.getAmountEmp(), remarks,img);
+            if(row>=1){
+                JOptionPane.showMessageDialog(null,row+" Recorded add...");
+                insertMember();
+                getEmployees();
+                clear();
+            }
+        }catch(Exception e){e.printStackTrace();}
+/////////////////////////////dbmanager...............................
+    public static int addEmployee(int catId, String name, String gendr, String fName, String surname, String dob, String nic, String contact, String email, String address, String joinDate, String dept, String grade, String officeNo, String homeNo, String status,int allowAmount, String remarks,byte img[])throws Exception{
+        Statement st=null;
+//      String query="insert into EmployeeTable(category_id,name,gender,f_name,surname,date_of_birth,cnic,contact,email,address,joining_date,dept_section,grade,office_phone,home_phone,marital_status,allow_amount,remarks)values("+catId+",'"+name+"','"+gendr+"','"+fName+"','"+surname+"','"+dob+"','"+nic+"','"+contact+"','"+email+"','"+address+"','"+joinDate+"','"+dept+"','"+grade+"','"+officeNo+"','"+homeNo+"','"+status+"',"+allowAmount+",'"+remarks+"')";
+        String query="insert into EmployeeTable(date_of_birth,category_id,name,gender,f_name,surname,cnic,contact,email,address,dept_section,grade,office_phone,home_phone,marital_status,remarks,image,allow_amount)values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+//                    String query="insert into  register(taluka_id,register_nic,register_name,register_fname,surname,address,remarks,thumb)values(?,?,?,?,?,?,?,?)";
+                    System.out.println(query);     
+                    PreparedStatement ps = null;
+                    int num=0;
+                        try{
+                            ps = con.prepareStatement(query);    
+                            ps.setString(1,dob);     
+                            ps.setInt(2,catId);
+                            ps.setString(3,name);      ps.setString(4,gendr);
+                            ps.setString(5,fName);     ps.setString(6,surname);
+                            ps.setString(7,nic);       ps.setString(8,contact);
+                            ps.setString(9,email);     ps.setString(10,address);
+                            ps.setString(11,dept);     ps.setString(12,grade);
+                            ps.setString(13,officeNo); ps.setString(14,homeNo);
+                            ps.setString(15,status);   ps.setString(16,remarks);
+                            ps.setBytes(17, img);      ps.setInt(18,allowAmount);
+                            num= ps.executeUpdate();
+                            con.commit();
+                    }
+                    finally
+                    {
+                        ps.close();
+                    }
+                    return num;
+    }

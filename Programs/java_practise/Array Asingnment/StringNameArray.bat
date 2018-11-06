@@ -1,0 +1,3 @@
+javac StringNameArray.java
+java StringNameArray
+pause...

@@ -1,0 +1,11 @@
+Basic pay :1000 
+House rent  45%:450
+ Medical Allowance 15% :150
+ Bounus 8%:80
+
+
+Gross Pay :680
+Income Tax 5% :50
+Zakat :30
+Convince  Allowance 8%:80
+Net Income :520
