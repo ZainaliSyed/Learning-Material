@@ -1,1 +1,2 @@
 - [merge-two-arrays-in-javascript-and-de-duplicate-items](https://stackoverflow.com/questions/1584370/how-to-merge-two-arrays-in-javascript-and-de-duplicate-items)
+- [java program](https://stackoverflow.com/questions/42045283/merge-two-arrays-and-remove-duplicates-in-java)
