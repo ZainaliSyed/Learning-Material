@@ -17,5 +17,10 @@
 
 trucate , delete , drop
 
-- View , Store procedure , cluster index
+- View , Function , Store procedure , cluster index
 - Entity ,Fragmentation
+
+# Reference 
+
+- [oracle DOC ](https://docs.oracle.com/cd/E11882_01/server.112/e41084/functions.htm#SQLRF006)
+
