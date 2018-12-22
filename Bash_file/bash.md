@@ -11,3 +11,6 @@ export MONGO_PATH=/usr/local/mongodb/bin:$PATH
 
 export GOPATH /usr/local/go/bin/go
 ```
+
+**Setting Bachrc file**
+- [Ubuntu](https://askubuntu.com/questions/29239/where-is-bash-profile)
